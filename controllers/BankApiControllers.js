@@ -7,8 +7,8 @@ const bcrypt = require('bcrypt');
 exports.createUser = async function (req, res){
     res.sendFile(path.join(__dirname, "../views/register.html"))
     
-    const {email,firstName,lastName,password,password2,accountype} = req.body;
-    const userItem = new user({email,firstName,lastName,password,password2,accountype});
+    /*const {email,firstName,lastName,password,password2,accountype} = req.body;
+    const userItem = new user({email,firstName,lastName,password,password2,accountype});*/
     bcrypt.genSalt(10,(err,salt) =>
     bcrypt.hash(userItem.password,salt,
         (err,hash)=> {
